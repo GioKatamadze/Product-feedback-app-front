@@ -1,5 +1,6 @@
 import { EditFeedback, Feedback, Home, NewFeedback, Roadmap } from 'pages';
 import { Route, Routes } from 'react-router';
+import "./index.css";
 
 function App() {
   return (

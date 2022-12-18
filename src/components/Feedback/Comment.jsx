@@ -1,16 +1,16 @@
 import { Button } from 'components/shared';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Replay, ReplayForm } from '.';
+import { Reply, ReplyForm } from '.';
 
 const Comment = (props) => {
-  const [replayForm, setReplayForm] = useState(false);
+  const [replyForm, setReplyForm] = useState(false);
   const feedback = useSelector((state) => state.singleFeedback.feedback);
   const users = useSelector((state) => state.users.users);
   const comment = feedback.comments[props.index];
   const user = users.find((human) => human.id === comment.userId);
-  const onReplay = () => {
-    setReplayForm(!replayForm);
+  const onReply = () => {
+    setReplyForm(!replyForm);
   };
 
   return (
@@ -34,22 +34,22 @@ const Comment = (props) => {
                 <span className='text-gray jost-r-h3'>@{user.username}</span>
               </div>
               <Button
-                id={'replay-btn' + comment.id}
+                id={'reply-btn' + comment.id}
                 type='button'
                 className='text-electric hover:underline jost-b-h4 ml-auto'
-                onClick={onReplay}
+                onClick={onReply}
               >
-                Replay
+                Reply
               </Button>
             </div>
             <p className='w-full text-gray jost-r-h3 mt-6 md:ml-4'>
               {comment.content}
             </p>
-            {replayForm ? (
-              <ReplayForm
+            {replyForm ? (
+              <ReplyForm
                 commentId={comment.id}
-                replayTo={user.username}
-                setReplayForm={setReplayForm}
+                replyTo={user.username}
+                setReplyForm={setReplyForm}
               />
             ) : null}
           </div>
@@ -57,8 +57,8 @@ const Comment = (props) => {
       ) : null}
       {comment.replies.length > 0 && users.length > 0 ? (
         <div className='w-full border-l-gray border-l-[1px] border-opacity-10 pl-6 mt-6 flex flex-col gap-y-6'>
-          {comment.replies.map((replay) => (
-            <Replay replay={replay} key={replay.id} commentId={comment.id} />
+          {comment.replies.map((reply) => (
+            <Reply reply={reply} key={reply.id} commentId={comment.id} />
           ))}
         </div>
       ) : null}

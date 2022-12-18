@@ -1,15 +1,15 @@
 import { Button } from 'components/shared';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { ReplayForm } from '.';
+import { ReplyForm } from '.';
 
-const Replay = (props) => {
-  const [replayForm, setReplayForm] = useState(false);
+const Reply = (props) => {
+  const [replyForm, setReplyForm] = useState(false);
   const users = useSelector((state) => state.users.users);
-  const user = users.find((human) => human.id === props.replay.userId);
+  const user = users.find((human) => human.id === props.reply.userId);
 
-  const onReplay = () => {
-    setReplayForm(!replayForm);
+  const onReply = () => {
+    setReplyForm(!replyForm);
   };
   return (
     <div className='w-full md:flex'>
@@ -30,23 +30,23 @@ const Replay = (props) => {
             <span className='text-gray jost-r-h3'>@{user.username}</span>
           </div>
           <Button
-            id={'replay-btn' + props.replay.id}
+            id={'reply-btn' + props.reply.id}
             type='button'
             className='text-electric hover:underline jost-b-h4 ml-auto'
-            onClick={onReplay}
+            onClick={onReply}
           >
-            Replay
+            Reply
           </Button>
         </div>
         <p className='w-full text-gray jost-r-h3 mt-6 md:ml-4'>
-          <span className=' text-violet'>@{props.replay.replyingTo}</span>
-          {' ' + props.replay.content}
+          <span className=' text-violet'>@{props.reply.replyingTo}</span>
+          {' ' + props.reply.content}
         </p>
-        {replayForm ? (
-          <ReplayForm
+        {replyForm ? (
+          <ReplyForm
             commentId={props.commentId}
-            replayTo={user.username}
-            setReplayForm={setReplayForm}
+            replyTo={user.username}
+            setReplyForm={setReplyForm}
           />
         ) : null}
       </div>
@@ -54,4 +54,4 @@ const Replay = (props) => {
   );
 };
 
-export default Replay;
+export default Reply;
