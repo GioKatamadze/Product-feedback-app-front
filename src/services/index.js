@@ -1,4 +1,4 @@
 export * from "./statusServices";
 export * from "./categoryServices";
 export * from "./feedbackServices";
-export * from "./usersServices";
+export * from "./userServices";

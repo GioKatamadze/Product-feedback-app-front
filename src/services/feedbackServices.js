@@ -21,9 +21,9 @@ export const editFeedback = (data) => {
 };
 
 export const addComment = (data) => {
-  return axios.post("/comment", data);
+  return instance.post("/comment", data);
 };
 
 export const addReply = (data) => {
-  return axios.post("/reply", data);
+  return instance.post("/reply", data);
 };
