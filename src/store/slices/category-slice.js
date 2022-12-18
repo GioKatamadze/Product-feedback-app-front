@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const categorySlice = createSlice({
-  name: "Category",
+  name: "category",
   initialState,
   reducers: {
     fetchCategory: (state, action) => {
