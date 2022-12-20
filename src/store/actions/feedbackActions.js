@@ -25,7 +25,7 @@ export const fetchSingleFeedback = (id) => {
 
     try {
       const feedback = await fetchSingleFeedback();
-      dispatch(singleFeedbackActions.fetchFeedback(feedback));
+      dispatch(singleFeedbackActions.fetchFeedbacks(feedback));
     } catch (error) {}
   };
 };

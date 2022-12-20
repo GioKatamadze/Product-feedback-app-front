@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowLeft } from 'svg';
 
-const Header = () => {
+const RoadmapHeader = () => {
   const location = useLocation();
   return (
     <header className='w-full h-24 px-6 flex justify-between items-center bg-darkBlue md:rounded-cardBorderRadius'>
@@ -24,4 +24,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default RoadmapHeader;

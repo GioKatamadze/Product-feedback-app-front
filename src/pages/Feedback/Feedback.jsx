@@ -1,5 +1,5 @@
 import { FeedbackComponent } from 'components';
-import { Comment, Header, NewComment } from 'components/Feedback';
+import { Comment, FeedbackHeader, NewComment } from 'components/Feedback';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
@@ -12,6 +12,7 @@ const Feedback = () => {
   const dispatch = useDispatch();
   const feedback = useSelector((state) => state.singleFeedback.feedback);
   const categories = useSelector((state) => state.category.items);
+  console.log(feedback);
 
   useEffect(() => {
     if (categories.length === 0) dispatch(fetchCategories());
@@ -24,7 +25,7 @@ const Feedback = () => {
   return (
     <div className='w-full min-h-full bg-extraLightGray p-6 pb-20 lg:flex lg:justify-center md:p-10 md:pt-14 md:pb-28 lg:pt-20 lg:pb-32'>
       <div className='w-full lg:max-w-3xl'>
-        <Header />
+        <FeedbackHeader />
         {feedback.id ? <FeedbackComponent feedback={feedback} /> : null}
         {feedback.id ? (
           <div className='w-full p-6 bg-white mt-6 rounded-cardBorderRadius'>
@@ -35,7 +36,7 @@ const Feedback = () => {
               <Comment key={comment.id} index={index} />
             ))}
           </div>
-        ) : null}
+        ) : null}        
         <NewComment feedbackId={id} />
       </div>
     </div>

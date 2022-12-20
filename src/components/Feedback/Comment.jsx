@@ -12,6 +12,7 @@ const Comment = (props) => {
   const onReply = () => {
     setReplyForm(!replyForm);
   };
+  console.log(user);
 
   return (
     <div className='w-full mt-6'>

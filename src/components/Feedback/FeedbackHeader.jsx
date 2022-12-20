@@ -2,7 +2,7 @@ import { Button } from 'components/shared';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft } from 'svg';
 
-const Header = () => {
+const FeedbackHeader = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const location = useLocation();
@@ -30,4 +30,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default FeedbackHeader;

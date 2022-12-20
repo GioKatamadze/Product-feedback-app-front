@@ -1,4 +1,4 @@
-import { Feedback, Feedbacks, Header } from 'components/Roadmap';
+import { Feedback, Feedbacks, Header } from 'components';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchStatuses } from 'store';
