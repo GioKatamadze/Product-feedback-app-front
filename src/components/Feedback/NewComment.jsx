@@ -26,7 +26,7 @@ const NewComment = (props) => {
       const commentObj = {
         content: comment,
         feedbackId: +props.feedbackId,
-        userId: 1,
+        userId: 13,
       };
       try {
         const response = await addComment(commentObj);

@@ -43,7 +43,7 @@ const FeedbackComponent = (props) => {
     <div className='p-6 bg-white rounded-cardBorderRadius md:flex'>
       <div className='hidden md:block'>{voteBox}</div>
       <div id='info-box' className=''>
-        <span className='text-darkBlueTwo hover:text-electric jost-b-h4 md:jost-b-h3'>
+        <span className='text-darkBlueTwo hover:text-electric jost-b-h4 md:jost-b-h3 cursor-pointer' onClick={navigateFeedback}>
           {props.feedback.title}
         </span>
         <p className='text-gray jost-r-h3 md:jost-r-h2'>
